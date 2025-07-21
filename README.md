@@ -31,7 +31,7 @@ uaswe2 is a PHP-based e-commerce platform designed to simplify the process of ma
 ### Quick Start
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/uaswe2.git
+    git clone https://github.com/Galangabdi/uaswe2.git
     cd uaswe2
     ```
 

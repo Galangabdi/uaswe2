@@ -78,7 +78,7 @@
 <!-- Produk -->
 <?php
 session_start();
-$conn = mysqli_connect("localhost", "root", "", "uts_web2");
+include("koneksi.php");
 $result = mysqli_query($conn, "SELECT * FROM barang ORDER BY id DESC");
 $total_items_in_cart = array_sum($_SESSION['cart'] ?? []);
 ?>

@@ -1,13 +1,9 @@
 <?php
 // Koneksi ke database
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db = "uts_web2";
-$conn = new mysqli($host, $user, $pass, $db);
+include('koneksi.php');
 
-if ($conn->connect_error) {
-    die("Koneksi gagal: " . $conn->connect_error);
+if ($koneksi->connect_error) {
+    die("Koneksi gagal: " . $koneksi->connect_error);
 }
 
 // Pastikan request adalah POST
@@ -23,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($productId > 0 && !empty($nama) && !empty($ulasan) && $rating > 0) {
         
         // Gunakan prepared statement untuk keamanan
-        $stmt = $conn->prepare("INSERT INTO reviews (product_id, nama, ulasan, rating) VALUES (?, ?, ?, ?)");
+        $stmt = $koneksi->prepare("INSERT INTO reviews (product_id, nama, ulasan, rating) VALUES (?, ?, ?, ?)");
         $stmt->bind_param("issi", $productId, $nama, $ulasan, $rating);
 
         if ($stmt->execute()) {
@@ -46,5 +42,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit();
 }
 
-$conn->close();
+$koneksi->close();
 ?>

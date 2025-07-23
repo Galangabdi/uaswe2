@@ -5,13 +5,9 @@ session_start();
 // ===================================================================
 // 1. PENGATURAN & KONEKSI DATABASE
 // ===================================================================
-$db_host = 'localhost';
-$db_user = 'root';
-$db_pass = '';
-$db_name = 'uts_web2'; // Pastikan nama database ini benar
+include("koneksi.php"); // Pastikan nama database ini benar
 
-$conn = mysqli_connect($db_host, $db_user, $db_pass, $db_name);
-if (!$conn) {
+if (!$koneksi) {
     // Tampilkan pesan error jika koneksi gagal
     die("Koneksi database gagal: " . mysqli_connect_error());
 }
@@ -37,7 +33,7 @@ $types = str_repeat('i', count($product_ids_array));
 
 // Siapkan query yang aman menggunakan Prepared Statement
 $sql = "SELECT id, nama_barang, harga, gambar FROM barang WHERE id IN ($placeholders)";
-$stmt = mysqli_prepare($conn, $sql);
+$stmt = mysqli_prepare($koneksi, $sql);
 
 // Bind semua ID produk ke placeholder di query
 mysqli_stmt_bind_param($stmt, $types, ...$product_ids_array);

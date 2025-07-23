@@ -7,7 +7,7 @@ if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
 }
 
 $id = $_GET['id'];
-$stmt = mysqli_prepare($conn, "SELECT * FROM barang WHERE id = ?");
+$stmt = mysqli_prepare($koneksi, "SELECT * FROM barang WHERE id = ?");
 mysqli_stmt_bind_param($stmt, "i", $id);
 mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
@@ -91,7 +91,7 @@ if ($productId == 0) {
 }
 
 // 2. Ambil data PRODUK SPESIFIK dari tabel `barang`
-$stmt_produk = $conn->prepare("SELECT nama_barang, harga, gambar, deskripsi FROM barang WHERE id = ?");
+$stmt_produk = $koneksi->prepare("SELECT nama_barang, harga, gambar, deskripsi FROM barang WHERE id = ?");
 $stmt_produk->bind_param("i", $productId);
 $stmt_produk->execute();
 $result_produk = $stmt_produk->get_result();
@@ -103,7 +103,7 @@ if (!$produk) {
 }
 
 // 3. Ambil data ULASAN SPESIFIK untuk produk ini dari tabel `reviews`
-$stmt_ulasan = $conn->prepare("SELECT nama, ulasan, rating, created_at FROM reviews WHERE product_id = ? ORDER BY created_at DESC");
+$stmt_ulasan = $koneksi->prepare("SELECT nama, ulasan, rating, created_at FROM reviews WHERE product_id = ? ORDER BY created_at DESC");
 $stmt_ulasan->bind_param("i", $productId);
 $stmt_ulasan->execute();
 $result_ulasan = $stmt_ulasan->get_result();

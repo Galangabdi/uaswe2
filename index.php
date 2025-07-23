@@ -160,7 +160,7 @@ $total_items_in_cart = array_sum($_SESSION['cart'] ?? []);
 // ===================================================================
 // 4. MENUTUP KONEKSI
 // ===================================================================
-mysqli_close($conn);
+mysqli_close($koneksi);
 ?>
 <section class="relative overflow-hidden">
   <div class="swiper-container h-96">

@@ -14,7 +14,7 @@ if (!$koneksi) {
 
 // Jika keranjang kosong, redirect ke halaman utama
 if (empty($_SESSION['cart'])) {
-    header('Location: UTS.php');
+    header('Location: index.php');
     exit;
 }
 
@@ -88,7 +88,7 @@ $page_title = 'Checkout';
 
     <div class="container mx-auto px-4 py-8 lg:py-12">
         <div class="text-center mb-10">
-            <a href="UTS.php" class="text-3xl font-bold text-gray-900 animate-pulse">RED DRAGON</a>
+            <a href="index.php" class="text-3xl font-bold text-gray-900 animate-pulse">RED DRAGON</a>
             <h1 class="text-4xl font-bold tracking-tight text-gray-900 mt-2">Checkout</h1>
         </div>
 

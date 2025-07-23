@@ -79,7 +79,7 @@
 <?php
 session_start();
 include("koneksi.php");
-$result = mysqli_query($conn, "SELECT * FROM barang ORDER BY id DESC");
+$result = mysqli_query($koneksi, "SELECT * FROM barang ORDER BY id DESC");
 $total_items_in_cart = array_sum($_SESSION['cart'] ?? []);
 ?>
 <!DOCTYPE html>

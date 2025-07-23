@@ -2,14 +2,7 @@
 // api.php
 
 session_start();
-header('Content-Type: application/json');
-
-// Koneksi Database
-$conn = mysqli_connect("localhost", "root", "", "uts_web2");
-if (!$conn) {
-    echo json_encode(['success' => false, 'error' => 'Koneksi database gagal']);
-    exit;
-}
+include('koneksi.php');
 
 // Inisialisasi Keranjang
 if (!isset($_SESSION['cart'])) {
@@ -25,7 +18,7 @@ switch ($action) {
         if (!empty($_SESSION['cart'])) {
             $product_ids = implode(',', array_keys($_SESSION['cart']));
             $sql = "SELECT id, nama_barang as name, harga as price, gambar as image FROM barang WHERE id IN ($product_ids)";
-            $result = mysqli_query($conn, $sql);
+            $result = mysqli_query($koneksi, $sql);
             while ($row = mysqli_fetch_assoc($result)) {
                 $row['quantity'] = $_SESSION['cart'][$row['id']];
                 $cart_items[] = $row;
@@ -74,5 +67,5 @@ switch ($action) {
         echo json_encode(['success' => false, 'error' => 'Aksi tidak valid.']);
 }
 
-mysqli_close($conn);
+mysqli_close($koneksi);
 ?>

@@ -61,7 +61,7 @@ if(isset($_POST['update'])) {
         <a href="UTS.html" class="text-2xl font-bold animate-pulse tracking-wide">RED DRAGON</a>
     </div>
     <nav class="space-x-4 hidden md:block">
-        <a href="UTS.html" class="hover:underline">Beranda</a>
+        <a href="index.html" class="hover:underline">Beranda</a>
         <a href="tentangkami.php" class="hover:underline">tentang kami</a>
         <a href="komponen.html" class="hover:underline">komponen</a>
         <a href="tes.php" class="hover:underline">AKUN</a>

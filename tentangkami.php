@@ -33,9 +33,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body class="bg-white text-gray-800 pt-[56px]">
   <!-- Header -->
   <header class="bg-black text-white px-4 py-3 flex justify-between items-center fixed top-0 left-0 right-0 z-50">
-        <div><a href="UTS.php" class="text-2xl font-bold animate-pulse">RED DRAGON</a></div>
+        <div><a href="index.php" class="text-2xl font-bold animate-pulse">RED DRAGON</a></div>
         <nav class="space-x-4 hidden md:block">
-            <a href="UTS.php" class="hover:underline">Beranda</a>
+            <a href="index.php" class="hover:underline">Beranda</a>
             <a href="tentangkami.php" class="hover:underline">Tentang Kami</a>
             <a href="komponen.html" class="hover:underline">Komponen</a>
             <a href="tes.php" class="hover:underline">Akun</a>
@@ -161,7 +161,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <div>
         <h3 class="text-lg font-bold mb-2">Tautan Cepat</h3>
         <ul class="text-sm space-y-2">
-          <li><a href="UTS.html" class="hover:underline">Beranda</a></li>
+          <li><a href="index.php" class="hover:underline">Beranda</a></li>
           <li><a href="tentangkami.php" class="hover:underline">Tentang Kami</a></li>
           <li><a href="komponen.html" class="hover:underline">Komponen</a></li>
           <li><a href="tes.php" class="hover:underline">AKUN</a></li>

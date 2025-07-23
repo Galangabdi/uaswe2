@@ -44,7 +44,7 @@ if (isset($_POST['login'])) {
             <a href="UTS.html" class="text-2xl font-bold animate-pulse">RED DRAGON</a>
         </div>
         <nav class="space-x-4 hidden md:block">
-            <a href="UTS.html" class="hover:underline">Beranda</a>
+            <a href="index.html" class="hover:underline">Beranda</a>
             <a href="tentangkami.html" class="hover:underline">Tentang Kami</a>
             <a href="komponen.html" class="hover:underline">Komponen</a>
             <a href="tes.html" class="hover:underline">AKUN</a>

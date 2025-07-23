@@ -1,6 +1,6 @@
 <?php
 session_start();
-$conn = mysqli_connect("localhost", "root", "", "uts_web2");
+include("koneksi.php");
 
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
     die("ID Produk tidak valid.");
@@ -30,7 +30,7 @@ $total_items_in_cart = array_sum($_SESSION['cart'] ?? []);
 </head>
 <body class="bg-gray-100 text-gray-800 pt-[56px]">
     <header class="bg-black text-white px-4 py-3 flex justify-between items-center fixed top-0 left-0 right-0 z-50">
-        <div><a href="UTS.php" class="text-2xl font-bold animate-pulse">RED DRAGON</a></div>
+        <div><a href="index.php" class="text-2xl font-bold animate-pulse">RED DRAGON</a></div>
         <nav class="space-x-4 hidden md:block">
             <a href="index.php" class="hover:underline">Beranda</a>
             <a href="#" class="hover:underline">Tentang Kami</a>
@@ -79,15 +79,8 @@ $total_items_in_cart = array_sum($_SESSION['cart'] ?? []);
     </script>
    <?php
 // Koneksi ke database
-$host = "localhost";
-$user = "root";
-$pass = "";
-$db = "uts_web2";
-$conn = new mysqli($host, $user, $pass, $db);
+include("koneksi.php");
 
-if ($conn->connect_error) {
-    die("Koneksi gagal: " . $conn->connect_error);
-}
 
 // 1. Dapatkan ID produk dari URL, pastikan itu adalah angka
 $productId = isset($_GET['id']) ? (int)$_GET['id'] : 0;

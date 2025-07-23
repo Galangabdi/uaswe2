@@ -47,10 +47,10 @@ session_start();
 
     <header class="bg-black text-white px-4 py-3 flex justify-between items-center shadow-md">
         <div>
-            <a href="uts.php" class="text-2xl font-bold animate-pulse">RED DRAGON</a>
+            <a href="index.php" class="text-2xl font-bold animate-pulse">RED DRAGON</a>
         </div>
         <nav class="space-x-4">
-            <a href="uts.php" class="hover:underline">Beranda</a>
+            <a href="index.php" class="hover:underline">Beranda</a>
             <a href="keranjang.php" class="relative inline-flex items-center group">
                 <span class="inline-flex items-center px-3 py-1 rounded-full bg-red-600">Keranjang</span>
                 <span id="cart-count-badge" class="absolute -top-2 -right-2 bg-yellow-400 text-black text-xs font-bold px-2 py-0.5 rounded-full"><?= array_sum($_SESSION['cart'] ?? []) ?></span>
@@ -147,7 +147,7 @@ session_start();
                     <svg class="mx-auto h-16 w-16 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 9m13-9l2 9m-5-9V6a2 2 0 10-4 0v3" /></svg>
                     <h2 class="mt-4 text-2xl font-bold text-gray-900">Keranjang Anda Kosong</h2>
                     <p class="mt-2 text-base text-gray-500">Ayo temukan PC impian Anda di halaman utama!</p>
-                    <a href="uts.php" class="mt-6 inline-block rounded-md border border-transparent bg-red-600 py-3 px-8 text-base font-medium text-white hover:bg-red-700">Lanjut Belanja</a>
+                    <a href="index.php" class="mt-6 inline-block rounded-md border border-transparent bg-red-600 py-3 px-8 text-base font-medium text-white hover:bg-red-700">Lanjut Belanja</a>
                 </div>
             `;
             return;

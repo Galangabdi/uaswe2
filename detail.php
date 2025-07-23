@@ -32,7 +32,7 @@ $total_items_in_cart = array_sum($_SESSION['cart'] ?? []);
     <header class="bg-black text-white px-4 py-3 flex justify-between items-center fixed top-0 left-0 right-0 z-50">
         <div><a href="UTS.php" class="text-2xl font-bold animate-pulse">RED DRAGON</a></div>
         <nav class="space-x-4 hidden md:block">
-            <a href="UTS.php" class="hover:underline">Beranda</a>
+            <a href="index.php" class="hover:underline">Beranda</a>
             <a href="#" class="hover:underline">Tentang Kami</a>
             <a href="keranjang.php" class="relative hover:underline inline-flex items-center group">
                 <span class="inline-flex items-center px-3 py-1 rounded-full bg-red-600">Keranjang</span>
